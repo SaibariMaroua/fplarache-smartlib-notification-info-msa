@@ -34,3 +34,17 @@ resource "aws_ecs_task_definition" "catalog_task" {
     cpu                      = "256"
     execution_role_arn       = aws_iam_role.ecs_task_execution.arn
 }
+
+// Création du service ECS
+resource "aws_ecs_service" "catalog_service" {
+    name     = var.ecs_service_name
+    cluster  = aws_ecs_cluster.catalog_cluster.id
+    task_definition = aws_ecs_task_definition.catalog_task.arn
+    launch_type  = "FARGATE"
+
+    network_configuration {
+        subnets  = var.subnets_ids
+        assign_public_ip = true
+    }
+    desired_count = 1 
+}
