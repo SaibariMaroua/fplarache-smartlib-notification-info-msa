@@ -1,7 +1,7 @@
 variable "aws_region" {
  default = "eu-north-1"
 }
-variable "aws_ecr_repository_name"{
+variable "ecr_repository_name"{
 default = "dev-fplarache-smartlib-notification-repo-msa"
 }
 variable "ecs_cluster_name"{

@@ -4,8 +4,8 @@ provider "aws" {
 
 
 resource "aws_ecr_repository" "notification_repo" {
-  name                = var.ecr_repository_name
-  image_tag_mutability = "MUTABLE"
+    name = var.aws_ecr_repository_name
+    image_tag_mutability = "MUTABLE"
 }
 
 
