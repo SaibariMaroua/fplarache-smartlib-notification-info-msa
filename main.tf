@@ -3,7 +3,7 @@ provider "aws" {
 }
 // Création du repository ECR
 resource "aws_ecr_repository" "notification_repo" {
-    name = var.aws_ecr_repository_name
+    name = var.ecr_repository_name
     image_tag_mutability = "MUTABLE"
 }
 
